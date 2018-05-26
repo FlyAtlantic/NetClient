@@ -35,39 +35,13 @@ namespace NetClient
         private void btnConnect_Click(object sender, EventArgs e)
         {
   
-            sck.Connect("192.168.56.102", 6809);
+            sck.Connect("37.59.115.154", 6809);
 
             FSUIPCConnection.Open();
 
             lblStatus.Text = "Connected";
             lblStatus.ForeColor = Color.ForestGreen;
             txtChat.Text = "You are now connect on network server!";
-
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-
-            // terminate = true;
-            // while (terminated == false) { }
-            LATandLON.Stop();
-            FSUIPCConnection.Close();
-            sck.Close();
-            sck.Dispose();
-
-            txtCallsign.Enabled = true;
-            txtAircraft.Enabled = true;
-            txtChatText.Enabled = false;
-            btnChatSend.Enabled = false;
-            btnClose.Enabled = false;
-            btnConnect.Enabled = false;
-
-            lblStatus.Text = "Disconnected";
-            lblStatus.ForeColor = Color.DarkRed;
-
-            btnConnect.Text = "Connect";
-            txtChat.Text = txtChat.Text + "\r\nYou are now disconnected on network server!";
 
 
         }
